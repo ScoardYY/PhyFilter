@@ -194,26 +194,31 @@
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="https://jiajindou.github.io/" target="_blank">Jindou Jia</a><sup>*</sup>,</span>
+                <a href="https://jiajindou.github.io/" target="_blank">Jindou Jia</a><sup>1&dagger</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Shixuan Han</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Shixuan Han</a><sup>2&dagger</sup>,</span>
                   <span class="author-block">
-                    <a href="https://scoardyy.github.io/mengwang.github.io/" target="_blank">Meng Wang</a><sup>*</sup>,</span>
+                    <a href="https://scoardyy.github.io/mengwang.github.io/" target="_blank">Meng Wang</a><sup>2&dagger</sup>,</span>
                     <span class="author-block">
-                    <a href="https://zzhanyoung.github.io/" target="_blank">Zihan Yang</a>,</span><span class="author-block">
-                    <a href="https://orcid.org/0000-0002-7427-8772" target="_blank">Sicheng Zhou</a>,</span><span class="author-block">
-                    <a href="https://scholar.google.com/citations?hl=zh-CN&user=c0MaejIAAAAJ" target="_blank">Kexin Guo</a>,</span><span class="author-block">
-                    <a href="https://scholar.google.com/citations?user=V25k08UAAAAJ&hl=zh-CN" target="_blank">Jianfei Yang</a>,</span><span class="author-block">
-                    <a href="https://scholar.google.com/citations?user=6UgtuZ8AAAAJ&hl=zh-CN&oi=ao" target="_blank">Xiang Yu</a>,</span><span class="author-block">
-                    <a href="https://scholar.google.com/citations?user=IxO-SDwAAAAJ&hl=zh-CN" target="_blank">Lei Guo</a>
+                    <a href="https://scoardyy.github.io/mengwang.github.io/" target="_blank">Gen Li</a><sup>1</sup>,</span>
+                    <span class="author-block">
+                    <a href="https://zzhanyoung.github.io/" target="_blank">Zihan Yang</a><sup>3</sup>,</span><span class="author-block">
+                    <a href="https://orcid.org/0000-0002-7427-8772" target="_blank">Sicheng Zhou</a><sup>4</sup>,</span><span class="author-block">
+                    <a href="https://scholar.google.com/citations?hl=zh-CN&user=c0MaejIAAAAJ" target="_blank">Kexin Guo</a><sup>3*</sup>,</span><span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=V25k08UAAAAJ&hl=zh-CN" target="_blank">Jianfei Yang</a><sup>1*</sup>,</span><span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=6UgtuZ8AAAAJ&hl=zh-CN&oi=ao" target="_blank">Xiang Yu</a><sup>2*</sup>,</span><span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=IxO-SDwAAAAJ&hl=zh-CN" target="_blank">Lei Guo</a><sup>2*</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block"> Nanyang Technological University, Beihang University</span>
+                    <span class="author-block"> <sup>1</sup>School of Mechanical and Aerospace Engineering, Nanyang Technological University, 50 Nanyang Avenue, 639798, Singapore.</span>
+                     <span class="author-block"> <sup>2</sup>School of Automation Science and Electrical Engineering, Beihang University, Xueyuan Road, Beijing, 100191, China.</span>
+                    <span class="author-block"> <sup>3</sup>School of Aeronautic Science and Engineering, Beihang University, Xueyuan Road, Beijing, 100191, China.</span>
+                     <span class="author-block"> <sup>4</sup>School of Electrical and Electronic Engineering, Nanyang Technological University, 50 Nanyang Avenue, 639798, Singapore.</span>
                     <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="eql-cntrb"><small><br><sup>&dagger</sup>Indicates Equal Contribution</small></span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -268,7 +273,12 @@
         <img src="static/images/All_scenarios.png" alt="First research result visualization" loading="lazy" class="image is-60 mx-auto"/>
         <!-- TODO: Replace with description of this result -->
         <h2 class="subtitle has-text-centered">
-          Overview of the presented PhyFilter.
+         <b> Overview of the presented PhyFilter.<b> <b>a<b> The learning output of RL or SL is enhanced by a physics-informed filter which helps narrow the large generalization gap. <b>b<b> The implementation details of
+the PhyFilter, which is lightweight and analytic. More theoretical details refer to Methods “Filtering learning residual”. <b>c<b> The PhyFilter is validated across four distinct empirical examples. <b>i<b>
+Policy learning for quadruped locomotion. The quadruped is trained in a simplified simulational environment; with the PhyFilter, it generalizes to unseen velocity, payload, and real-world terrains.
+<b>ii<b> Dynamical learning for drone maneuvering flight. A specific machine learning technique learns mass uncertainty, while the PhyFilter helps handle unseen wind disturbance. <b>iii<b> Dynamical learning for aerial manipulation. A designated machine learning technique learns coupling uncertainties
+between drone and manipulator, with the PhyFilter aiding in the handling of unseen wind disturbances and mass uncertainties. <b>iv<b> Kinematics learning for acceleration perception. An NN-based
+differentiator with the input of velocity sequence, is trained to obtain the real-time acceleration for a drone. The PhyFilter can favor its generalization to inputs with distribution shift.
         </h2>
       </div>
       <div class="item">
@@ -299,7 +309,12 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Out-of-distribution (OOD) generalization remains a long-standing open problem for most machine learning paradigms. Prevailing solutions typically resort to the neural scaling law. However, tremendous real-world training datasets may be infeasible for the majority of robotic systems. In this work, we introduce PhyFilter, a theoretically-driven yet parsimonious framework that enhances OOD generalization for robotics by leveraging readily accessible physical knowledge. Specifically, the PhyFilter refines learning outputs via state feedback and differential structure, gracefully performing the real-time compensation of learning residuals. Furthermore, an auto-learning algorithm, stemming from optimal control scheme, is developed to optimize the parameters of the PhyFilter. The PhyFilter lightens the learning burden while favoring excellent generalization. The effectiveness of the PhyFilter is thoroughly validated across four representative scenarios, including policy learning for quadruped locomotion, dynamics learning for drone maneuvering flight, dynamics learning for aerial manipulation, and kinematics learning for acceleration perception. Experimental results demonstrate that PhyFilter enables quadrupeds to generalize to unseen terrains，payloads, and velocities; drones to adapt to unseen wind disturbances; aerial manipulators to accommodate unseen wind disturbances and mass uncertainties; and acceleration differentiators to handle OOD inputs.
+            Living beings exhibit extraordinary adaptability to unseen environments due to their innate exquisite structures and acquired experience accumulation. Endowing robots with such generalization capabilities can facilitate their deployment
+in dynamic real-world settings. Prevailing solutions typically resort to the data scaling law, empirically proven effective in large language models. Unfortunately, acquiring real-world training data of comparable scale for robots proves challenging, time-consuming, and expensive. Here we show that, even with limited
+training data, the robotic generalization can be dramatically improved by filtering learning outputs with accessible physical knowledge. This physics-informed filter, named PhyFilter, is achieved by correcting learning outputs via established differential structures and real-time state feedback, seamlessly performing the real-time compensation of learning residuals. We also introduce an autolearning algorithm to explore optimal parameters of the PhyFilter. We validate
+the PhyFilter across four representative robotic scenarios using reinforcement learning and supervised learning. Notably, our results suggest that the PhyFilter enables quadrupeds to generalize to unseen terrains, payloads, and velocities;
+drones to maneuver under unseen wind disturbances; aerial manipulators to precisely capture a pen under unseen wind disturbances and mass uncertainties; and
+acceleration differentiators to handle inputs with distribution shift
           </p>
         </div>
       </div>
@@ -322,7 +337,7 @@
             <source src="static/videos/flagstone.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-          flagstone. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0
+           <!--flagstone. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0-->
         </h2>
         </div>
         <div class="item item-video2">
@@ -332,7 +347,7 @@
             <source src="static/videos/gravel road.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-         gravel road. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0
+          <!--gravel road. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0-->
         </h2>
         </div>
         <div class="item item-video3">
@@ -342,7 +357,7 @@
             <source src="static/videos/lawn.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-          lawn. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0
+           <!--lawn. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0-->
         </h2>
         </div>
         <div class="item item-video3">
@@ -352,7 +367,7 @@
             <source src="static/videos/sandy ground.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-          sandy ground. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0
+           <!--sandy ground. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0-->
         </h2>
         </div>
       </div>
@@ -374,7 +389,7 @@
             <source src="static/videos/OOD payload.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-          OOD payload. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0
+           <!--OOD payload. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0-->
         </h2>
         </div>
         <div class="item item-video2">
@@ -384,7 +399,7 @@
             <source src="static/videos/OOD speed.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-          OOD speed. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0
+           <!--OOD speed. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0-->
         </h2>
         </div>
         <div class="item item-video3">
@@ -394,7 +409,7 @@
             <source src="static/videos/training performance.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-          training performance. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0
+           <!--training performance. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0-->
         </h2>
         </div>
         <div class="item item-video3">
@@ -404,7 +419,7 @@
             <source src="static/videos/unseen terrain traversal.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-          unseen terrain traversal. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0
+          <!-- unseen terrain traversal. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0-->
         </h2>
         </div>
       </div>
@@ -426,7 +441,7 @@
             <source src="static/videos/drone.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-          Drone flight. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0
+          <!-- Drone flight. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0-->
         </h2>
        
       </div>
@@ -440,7 +455,7 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Aerial manipulation </h2>
+      <h2 class="title is-3">Aerial Manipulation Experiments</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <!-- TODO: Add poster image for better preview -->
@@ -449,7 +464,7 @@
             <source src="static/videos/baseline.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-          Baseline. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0
+           <!--Baseline. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0-->
         </h2>
         </div>
         <div class="item item-video2">
@@ -459,7 +474,7 @@
             <source src="static/videos/SEER-I.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-          SEER-I. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0
+           <!--SEER-I. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0-->
         </h2>
         </div>
         <div class="item item-video3">
@@ -469,7 +484,7 @@
             <source src="static/videos/phyfilter.mp4" type="video/mp4">
           </video>
           <h2 class="subtitle has-text-centered">
-          phyfilter. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0
+           <!--phyfilter. The high-resolution Video can be found in https://www.youtube.com/embed/JkaxUblCGz0-->
         </h2>
         </div>
       </div>
